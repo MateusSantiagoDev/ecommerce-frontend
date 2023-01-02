@@ -1,16 +1,23 @@
 import "./Header.css";
+import { BsSearch } from 'react-icons/bs';
+import { MdAddShoppingCart } from 'react-icons/md';
 
 export function Header() {
     return (
         <div className="div_header">
+            <div className="div_logo-form">
             <div className="div_logo">
                 <img src="/" alt="logo" />
             </div>
             <div>
                 <form className="form_header">
                     <input type="search" />
-                    <button>buscar</button>
+                    <button><BsSearch/></button>
                 </form>
+            </div>
+            <div>
+                <MdAddShoppingCart/>
+            </div>
             </div>
             <div className="div_menu">
                 <ul className="ul_header">

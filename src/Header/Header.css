@@ -1,0 +1,16 @@
+.div_header {
+   height: 30%;
+   width: 100%;
+   background-color: aliceblue;
+}
+
+.div_logo-form {
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 3%;
+}
+
+.ul_header {
+    display: flex;
+    justify-content: space-evenly;
+}
