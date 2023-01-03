@@ -4,6 +4,7 @@ import { MdAddShoppingCart } from "react-icons/md";
 import Modal from "react-modal";
 import { useState } from "react";
 import { IoIosCloseCircle } from "react-icons/io";
+import logo2 from "../Assets/logo/logo2.png";
 
 const customStyle = {
   overlay: {
@@ -24,7 +25,7 @@ export function Header() {
     <div className="div_header">
       <div className="div_logo-form">
         <div className="div_logo">
-          <img src="/" alt="logo" />
+          <img src={logo2} alt="logo" />
         </div>
         <div>
           <form className="form_header">

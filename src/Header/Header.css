@@ -1,13 +1,24 @@
 .div_header {
-   height: 30%;
+   height: 21vh;
    width: 100%;
    background-color: rgb(223, 223, 126);  
 }
 
+.div_logo {
+    height: 100%;
+}
+
+.div_logo img{
+    width: 150px;
+    height: 90%;
+    border-radius: .5rem;
+
+}
+
 .div_logo-form {
     display: flex;
-    justify-content: space-evenly;
-    padding-top: 3%;
+    justify-content: space-around;
+    padding-top: 1%;
 }
 
 .ul_header {
@@ -15,35 +26,40 @@
     justify-content: end;
     list-style: none;
     margin-right: 8rem;
+    margin-top: 0;
 }
 
 .li_header button{
+    margin-top: 0;
+    padding-top: 0;
     background-color: rgb(223, 223, 126);  
     font-weight: 700;
     font-family: "eixo";
+    font-size: 15px;
     margin-left: 1rem;
     cursor: pointer;
     border: none;
 }
 
 .li_header button:hover {
-    color: goldenrod;
+    color: #fff;
 }
 
 .form_header {
+    padding-top: 2rem;
     width: 100vh;
     height: 5vh;
 
 }
 
-.input_header {
+.input_header {    
     width: 95%;
     height: 100%;
     border: none;
 }
 
 .button_header-search {
-    margin-top: .1rem;
+    margin-top: .5rem;
     height: 100%;
     border: none;
 }
@@ -55,17 +71,21 @@
     color: goldenrod;
 } 
 
+.div_header-cart {
+    margin-top: 2rem;
+} 
+
 .div_header-cart:hover {
     cursor: pointer;
     transform: scale(1.1);
-    color: goldenrod;
+    color: #fff;
 }
 
 .modal_header {
-    margin-top: 18vh; 
-    background-color: black;
-    margin-left: 70%;
-    margin-right: 20%;
+    margin-top: 21vh; 
+    background-color: dimgray;
+    margin-left: 68%;
+    margin-right: 21%;
     position: relative;
     border-radius: .5rem;
 }
@@ -92,7 +112,7 @@
    position: absolute;
    border: none;
    border-radius: .5rem;
-   background-color: black;
+   background-color: dimgray;
    color: red;
    cursor: pointer;
 }
