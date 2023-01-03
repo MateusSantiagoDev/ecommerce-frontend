@@ -1,9 +1,9 @@
 import './Home.css';
 
+
 export function Home() {
     return (
-        <div>
-            
-        </div>
+        <div className="div_home">
+      </div>
     );
 }

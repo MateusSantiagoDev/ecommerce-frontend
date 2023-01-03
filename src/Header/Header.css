@@ -1,7 +1,7 @@
 .div_header {
    height: 30%;
    width: 100%;
-   background-color: aliceblue;
+   background-color: rgb(223, 223, 126);  
 }
 
 .div_logo-form {
@@ -12,5 +12,87 @@
 
 .ul_header {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: end;
+    list-style: none;
+    margin-right: 8rem;
+}
+
+.li_header button{
+    background-color: rgb(223, 223, 126);  
+    font-weight: 700;
+    font-family: "eixo";
+    margin-left: 1rem;
+    cursor: pointer;
+    border: none;
+}
+
+.li_header button:hover {
+    color: goldenrod;
+}
+
+.form_header {
+    width: 100vh;
+    height: 5vh;
+
+}
+
+.input_header {
+    width: 95%;
+    height: 100%;
+    border: none;
+}
+
+.button_header-search {
+    margin-top: .1rem;
+    height: 100%;
+    border: none;
+}
+
+.button_header-search:hover {
+    background-color: #fff;
+    cursor: pointer;
+    transform: scale(1.1);
+    color: goldenrod;
+} 
+
+.div_header-cart:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    color: goldenrod;
+}
+
+.modal_header {
+    margin-top: 18vh; 
+    background-color: black;
+    margin-left: 70%;
+    margin-right: 20%;
+    position: relative;
+    border-radius: .5rem;
+}
+
+.ul_modal-header {
+    padding: .5rem;   
+    list-style: none;     
+}
+
+.li_modal-header {
+    color: #fff;
+    cursor: pointer;
+    font-weight: 700;
+    font-family: "eixo";
+}
+
+.li_modal-header:hover {
+    color: goldenrod;
+}
+
+.button_modal-header {
+   margin-top: 3%;
+   margin-left: 80%;
+   position: absolute;
+   border: none;
+   border-radius: .5rem;
+   background-color: black;
+   color: red;
+   cursor: pointer;
 }
