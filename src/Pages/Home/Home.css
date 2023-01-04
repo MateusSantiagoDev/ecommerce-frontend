@@ -17,7 +17,7 @@
 .item {
   min-height: 50px;
   min-width: 400px;
-  padding: 2px; 
+  padding: 2px;
 }
 
 .item img {
@@ -25,6 +25,8 @@
   height: 100%;
   pointer-events: none;
 }
+
+/*#############################################*/
 
 .section1-home {
   display: flex;
@@ -36,13 +38,40 @@
 }
 
 .section2-home {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
-    max-width: 90%;
-    margin: 2rem auto;
-  }
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  max-width: 90%;
+  margin: 2rem auto;
+}
+
+
+.section3-home {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  max-width: 90%;
+  margin: 2rem auto;
+}
+
+.section4-home {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  max-width: 90%;
+  margin: 2rem auto;
+}
+
+.section5-home {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 10px;
+  margin: 0 auto;
+}
 
 .div1_home {
   width: 200px;
@@ -50,43 +79,65 @@
   background-color: #fff;
 }
 
-.section3-home {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: auto;
-    grid-gap: 50px;
-
-    padding: 3rem;
-    margin: 0 auto;
-    max-width: 1200px;
-}
-
-.section3-home article {
+.div1_home:hover {
+  transition: all 1s;
+  box-shadow: 2px 2px 7px 7px dimgray; 
+  cursor: pointer;
 
 }
 
-.section3-home article div {
-  width: 100%;
-  height: 200px;
-
+.div1_destaque-home {
+  height: 60vh;
+  width: 50%;
   background-color: #fff;
 }
 
-.article_destaque {
-    width: 100%;
-    height: 60vh;
+.div1_destaque-home:hover {
+  transition: all 1s;
+  box-shadow: 2px 2px 7px 7px dimgray; 
+  cursor: pointer;
+
 }
 
-.section3-home article:nth-child(n + 2) {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+.div2_destaque-home {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  height: 60vh;
+  width: 40%;
+  background-color: #ccc;
+  gap: 30px;
+}
+
+.div_destaque-home {
+  height: 150px;
+  width: 150px;
+  background-color: #fff;
+}
+
+.div_destaque-home:hover {
+  transition: all 1s;
+  box-shadow: 2px 2px 7px 7px dimgray; 
+  cursor: pointer;
+}
+
+.section_parceiros-home {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 auto;
+  gap: 30px; 
+  padding-bottom: 3rem;
+}
+
+.div_parceiros-home {
+    height: 300px;
+    width: 200px;
     background-color: #fff;
 }
 
-.article_destaque {
-    grid-column: 1;
-    grid-row: 1/5;
-    background-color: #fff;
-
+.div_parceiros-home:hover {
+  transition: all 1s;
+  box-shadow: 2px 2px 7px 7px dimgray; 
+  cursor: pointer;
 }
-

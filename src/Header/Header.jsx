@@ -1,9 +1,10 @@
 import "./Header.css";
 import { BsSearch } from "react-icons/bs";
 import { MdAddShoppingCart } from "react-icons/md";
+import { IoIosCloseCircle } from "react-icons/io";
 import Modal from "react-modal";
 import { useState } from "react";
-import { IoIosCloseCircle } from "react-icons/io";
+import { useNavigate } from "react-router-dom";
 import logo2 from "../Assets/logo/logo2.png";
 
 const customStyle = {
@@ -16,6 +17,7 @@ Modal.setAppElement("#root");
 
 export function Header() {
   const [statusModal, setStatusModal] = useState(false);
+  const navigate = useNavigate();
 
   function Close() {
     setStatusModal(!statusModal);
@@ -51,7 +53,9 @@ export function Header() {
             </button>
           </li>
           <li className="li_header">
-            <button>Vender</button>
+            <button onClick={() => {
+              navigate("/sell")
+            }}>Vender</button>
           </li>
           <li className="li_header">
             <button>Fale conosco</button>

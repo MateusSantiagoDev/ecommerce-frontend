@@ -53,19 +53,34 @@ export function Home() {
         <div className="div1_home"></div>
         <div className="div1_home"></div>
         <div className="div1_home"></div>
-        <div className="div1_home"></div>
-        <div className="div1_home"></div>
-        <div className="div1_home"></div>
-        <div className="div1_home"></div>
-        <div className="div1_home"></div>
-        <div className="div1_home"></div>
-        <div className="div1_home"></div>
+        <div className="div1_home"></div>        
+        <div className="div1_home"></div>       
       </section>
       <div>
         <h1>Moda</h1>
       </div>
       <section className="section2-home">
         <div className="div1_home"></div>
+        <div className="div1_home"></div>
+        <div className="div1_home"></div>
+        <div className="div1_home"></div>
+        <div className="div1_home"></div>       
+      </section>
+      <div>
+        <h1>Beleza</h1>
+      </div>
+      <section className="section3-home">
+      <div className="div1_home"></div>
+        <div className="div1_home"></div>
+        <div className="div1_home"></div>
+        <div className="div1_home"></div>
+        <div className="div1_home"></div>
+      </section>
+      <div>
+        <h1>Diversos</h1>
+      </div>
+      <section className="section4-home">
+      <div className="div1_home"></div>
         <div className="div1_home"></div>
         <div className="div1_home"></div>
         <div className="div1_home"></div>
@@ -78,22 +93,31 @@ export function Home() {
       </section>
       <div>
         <h1>Destaques</h1>
-        <section className="section3-home">
-          <article className="article_destaque">
-            <div></div>
-          </article>
-          <article>
-            <div></div>
-          </article>
-          <article>
-            <div></div>
-          </article>
-          <article>
-            <div></div>
-          </article>
-          <article>
-            <div></div>
-          </article>
+        <section className="section5-home">
+          <div className="div1_destaque-home"></div>
+          <div className="div2_destaque-home">
+            <div className="div_destaque-home"></div>
+            <div className="div_destaque-home"></div>
+            <div className="div_destaque-home"></div>
+            <div className="div_destaque-home"></div>
+            <div className="div_destaque-home"></div>
+            <div className="div_destaque-home"></div>           
+          </div>         
+        </section> 
+      </div>
+      <div>
+        <h1>Parceiros</h1>
+        <section className="section_parceiros-home">
+          <div className="div_parceiros-home"></div>
+          <div className="div_parceiros-home"></div>
+          <div className="div_parceiros-home"></div>
+          <div className="div_parceiros-home"></div>
+          <div className="div_parceiros-home"></div>
+          <div className="div_parceiros-home"></div>
+          <div className="div_parceiros-home"></div>
+          <div className="div_parceiros-home"></div>
+          <div className="div_parceiros-home"></div>
+          <div className="div_parceiros-home"></div>
         </section>
       </div>
     </div>
