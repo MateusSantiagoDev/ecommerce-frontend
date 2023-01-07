@@ -1,12 +1,14 @@
-@import url("https://fonts.googleapis.com/css?family=Exo:400,700");
-
-body,
-html {
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;  
+}
+body {  
   width: 100%;
   min-height: 100vh;
-  overflow: auto;
   background-color: #ccc;
-  font-family: sans-serif;
+  font-family: "eixo";
+/*   display: flex;
+  justify-content: center;
+  align-items: center; */
 }

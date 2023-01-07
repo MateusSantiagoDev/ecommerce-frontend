@@ -1,0 +1,97 @@
+.div_sell {
+    width: 100%;
+    background-color: #fff;
+}
+
+.div_button-voltar {
+    display: flex;
+    position: fixed;
+}
+
+.div_button-voltar button{
+     margin-left: 2rem;
+     margin-top: 2rem;
+     border-radius: .2rem;
+     color: black;
+     background-color: #ccc;
+     font-weight: 700;
+     font-family: "eixo";
+}
+
+.div_button-voltar button:hover {
+    color: yellow;
+    cursor: pointer;
+}
+
+.div_sell-forms {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 auto;
+  
+    border-radius: .5rem;
+    width: 30%;
+    font-weight: 700;
+    font-family: "eixo";
+    padding: 1.3rem;
+}
+
+.div_cadastro {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    height: 100%;
+    padding-bottom: .5rem;
+    background-color: yellow;
+    border-radius: .5rem .5rem 0 0;
+}
+
+.div_login {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    height: 100%;
+    padding-bottom: .5rem;
+    background-color: rgb(83, 83, 221);
+    border-radius: 0 0 .5rem .5rem;
+}
+
+.div_button-login {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: .5rem;
+}
+
+.div_button-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: .5rem;
+}
+
+.div_button-login button {
+    background-color: #ccc;
+    border-radius: .2rem;
+    font-weight: 700;
+    font-family: "eixo";
+
+}
+
+.div_button-login button:hover {
+    color: #fff;
+}
+
+.div_button-form button {
+   background-color: #ccc;
+   border-radius: .2rem;
+   font-weight: 700;
+    font-family: "eixo";
+}
+
+.div_button-form button:hover {
+    color: #fff;
+}
+

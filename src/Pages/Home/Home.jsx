@@ -1,125 +1,327 @@
 import "./Home.css";
-import { motion } from "framer-motion";
+/* import { motion } from "framer-motion"; */
 import { useState, useEffect, useRef } from "react";
-import img1 from "../../Assets/images/img1.jpg";
-import img2 from "../../Assets/images/img2.jpg";
-import img3 from "../../Assets/images/img3.jpg";
-import img4 from "../../Assets/images/img4.jpg";
-import img5 from "../../Assets/images/img5.jpg";
-import img6 from "../../Assets/images/img6.jpg";
-import img7 from "../../Assets/images/img7.jpg";
-import img8 from "../../Assets/images/img8.jpg";
-import img9 from "../../Assets/images/img9.jpg";
-import img10 from "../../Assets/images/img10.jpg";
-import img11 from "../../Assets/images/img11.jpg";
-import img12 from "../../Assets/images/img12.jpg";
-
-const images = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12];
-/* const images2 = [img7, img8, img9, img10, img11, img12]; */
-
+import chevron from "../../Assets/images/chevron.png";
+/* import img1 from "../../Assets/images/img1.jpg"
+import img2 from "../../Assets/images/img2.jpg"
+import img3 from "../../Assets/images/img3.jpg"
+import img4 from "../../Assets/images/img4.jpg"
+  */
 export function Home() {
-  const carousel = useRef();
-  const [width, setWidth] = useState(0);
+  const carousel1 = useRef(null);
+  const carousel2 = useRef(null);
+  const carousel3 = useRef(null);
+  const carousel4 = useRef(null);
+  const carousel5 = useRef(null);
+  const [data, setData] = useState([]);  
+  const [ parceiros, setParceiros ] = useState([]);
 
   useEffect(() => {
-    setWidth(carousel.current?.scrollWidth - carousel.current?.offsetWidth);
+    fetch("http://localhost:3000/static/shoes.json")
+      .then((response) => response.json())
+      .then(setData);
+
+      fetch("http://localhost:3000/static/parceiros.json")
+      .then((response) => response.json())
+      .then(setParceiros);
   }, []);
+
+  if (!data || !data.length) {
+    return null;
+  }
+
+/*   useEffect(() => {
+    fetch("http://localhost:3000/static/parceiros.json")
+      .then((response) => response.json())
+      .then(setParceiros);
+  }, []); */
+
+  if (!parceiros || !parceiros.length) {
+    return null;
+  }
+
+  const handleLeftClick = (e) => {
+    e.preventDefault();
+    carousel1.current.scrollLeft -= carousel1.current.offsetWidth;
+  };
+
+  const handleRightClick = (e) => {
+    e.preventDefault();
+    carousel1.current.scrollLeft += carousel1.current.offsetWidth;
+  };
+
+  const handleLeftClick2 = (e) => {
+    e.preventDefault();
+    carousel2.current.scrollLeft -= carousel2.current.offsetWidth;
+  };
+
+  const handleRightClick2 = (e) => {
+    e.preventDefault();
+    carousel2.current.scrollLeft += carousel2.current.offsetWidth;
+  };
+
+  const handleLeftClick3 = (e) => {
+    e.preventDefault();
+    carousel3.current.scrollLeft -= carousel3.current.offsetWidth;
+  };
+
+  const handleRightClick3 = (e) => {
+    e.preventDefault();
+    carousel3.current.scrollLeft += carousel3.current.offsetWidth;
+  };
+
+  const handleLeftClick4 = (e) => {
+    e.preventDefault();
+    carousel4.current.scrollLeft -= carousel4.current.offsetWidth;
+  };
+
+  const handleRightClick4 = (e) => {
+    e.preventDefault();
+    carousel4.current.scrollLeft += carousel4.current.offsetWidth;
+  };
+
+  const handleLeftClick5 = (e) => {
+    e.preventDefault();
+    carousel5.current.scrollLeft -= carousel5.current.offsetWidth;
+  };
+
+  const handleRightClick5 = (e) => {
+    e.preventDefault();
+    carousel5.current.scrollLeft += carousel5.current.offsetWidth;
+  };
+
   return (
-    <div className="div_home">
-      <motion.div
-        ref={carousel}
-        className="carousel"
-        whileTap={{ cursor: "grabbing" }}
-      >
-        <motion.div
-          className="inner"
-          drag="x"
-          dragConstraints={{ right: 0, left: -width }}
-          initial={{ x: 100 }}
-          animate={{ x: 0 }}
-          transition={{ duration: 1.3 }}
-        >
-          {images.map((el) => (
-            <motion.div className="item" key={el}>
-              <img src={el} alt="images1" />
-            </motion.div>
-          ))}
-        </motion.div>
-      </motion.div>
-      <div>
-        <h1>Eletronicos</h1>
+    <div>
+      <div className="slider">
+      
       </div>
-      <section className="section1-home">
-        <div className="div1_home"></div>
-        <div className="div1_home"></div>
-        <div className="div1_home"></div>
-        <div className="div1_home"></div>        
-        <div className="div1_home"></div>       
-      </section>
+
+    <div className="container">
       <div>
         <h1>Moda</h1>
       </div>
-      <section className="section2-home">
-        <div className="div1_home"></div>
-        <div className="div1_home"></div>
-        <div className="div1_home"></div>
-        <div className="div1_home"></div>
-        <div className="div1_home"></div>       
-      </section>
-      <div>
-        <h1>Beleza</h1>
+      <div className="carousell" ref={carousel1}>
+        {data.map((el) => {
+          const { id, name, image, price, oldPrice } = el;
+          return (
+            <div className="item" key={id}>
+              <div className="image">
+                <img src={image} alt="img" />
+              </div>
+              <div className="info">
+                <span className="name">{name}</span>
+                <span className="oldPrice">R$ {oldPrice}</span>
+                <span className="price">R$ {price}</span>
+              </div>
+            </div>
+          );
+        })}
       </div>
-      <section className="section3-home">
-      <div className="div1_home"></div>
-        <div className="div1_home"></div>
-        <div className="div1_home"></div>
-        <div className="div1_home"></div>
-        <div className="div1_home"></div>
-      </section>
+      <div className="buttons">
+        <button onClick={handleLeftClick}>
+          <img src={chevron} alt="scroll-left" />
+        </button>
+        <button onClick={handleRightClick}>
+          <img src={chevron} alt="scroll-right" />
+        </button>
+      </div>
+      <div>
+        <h1>Eletronicos</h1>
+      </div>
+      <div className="carousell" ref={carousel2}>
+        {data.map((el) => {
+          const { id, name, image, price, oldPrice } = el;
+          return (
+            <div className="item" key={id}>
+              <div className="image">
+                <img src={image} alt="img" />
+              </div>
+              <div className="info">
+                <span className="name">{name}</span>
+                <span className="oldPrice">R$ {oldPrice}</span>
+                <span className="price">R$ {price}</span>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+      <div className="buttons">
+        <button onClick={handleLeftClick2}>
+          <img src={chevron} alt="scroll-left" />
+        </button>
+        <button onClick={handleRightClick2}>
+          <img src={chevron} alt="scroll-right" />
+        </button>
+      </div>
+      <div>
+        <h1>Construção</h1>
+      </div>
+      <div className="carousell" ref={carousel3}>
+        {data.map((el) => {
+          const { id, name, image, price, oldPrice } = el;
+          return (
+            <div className="item" key={id}>
+              <div className="image">
+                <img src={image} alt="img" />
+              </div>
+              <div className="info">
+                <span className="name">{name}</span>
+                <span className="oldPrice">R$ {oldPrice}</span>
+                <span className="price">R$ {price}</span>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+      <div className="buttons">
+        <button onClick={handleLeftClick3}>
+          <img src={chevron} alt="scroll-left" />
+        </button>
+        <button onClick={handleRightClick3}>
+          <img src={chevron} alt="scroll-right" />
+        </button>
+      </div>
+      <div>
+        <h1>Esporte</h1>
+      </div>
+      <div className="carousell" ref={carousel4}>
+        {data.map((el) => {
+          const { id, name, image, price, oldPrice } = el;
+          return (
+            <div className="item" key={id}>
+              <div className="image">
+                <img src={image} alt="img" />
+              </div>
+              <div className="info">
+                <span className="name">{name}</span>
+                <span className="oldPrice">R$ {oldPrice}</span>
+                <span className="price">R$ {price}</span>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+      <div className="buttons">
+        <button onClick={handleLeftClick4}>
+          <img src={chevron} alt="scroll-left" />
+        </button>
+        <button onClick={handleRightClick4}>
+          <img src={chevron} alt="scroll-right" />
+        </button>
+      </div>
       <div>
         <h1>Diversos</h1>
       </div>
-      <section className="section4-home">
-      <div className="div1_home"></div>
-        <div className="div1_home"></div>
-        <div className="div1_home"></div>
-        <div className="div1_home"></div>
-        <div className="div1_home"></div>
-        <div className="div1_home"></div>
-        <div className="div1_home"></div>
-        <div className="div1_home"></div>
-        <div className="div1_home"></div>
-        <div className="div1_home"></div>
-      </section>
-      <div>
-        <h1>Destaques</h1>
-        <section className="section5-home">
-          <div className="div1_destaque-home"></div>
-          <div className="div2_destaque-home">
-            <div className="div_destaque-home"></div>
-            <div className="div_destaque-home"></div>
-            <div className="div_destaque-home"></div>
-            <div className="div_destaque-home"></div>
-            <div className="div_destaque-home"></div>
-            <div className="div_destaque-home"></div>           
-          </div>         
-        </section> 
+      <div className="carousell" ref={carousel5}>
+        {data.map((el) => {
+          const { id, name, image, price, oldPrice } = el;
+          return (
+            <div className="item" key={id}>
+              <div className="image">
+                <img src={image} alt="img" />
+              </div>
+              <div className="info">
+                <span className="name">{name}</span>
+                <span className="oldPrice">R$ {oldPrice}</span>
+                <span className="price">R$ {price}</span>
+              </div>
+            </div>
+          );
+        })}
       </div>
-      <div>
-        <h1>Parceiros</h1>
-        <section className="section_parceiros-home">
-          <div className="div_parceiros-home"></div>
-          <div className="div_parceiros-home"></div>
-          <div className="div_parceiros-home"></div>
-          <div className="div_parceiros-home"></div>
-          <div className="div_parceiros-home"></div>
-          <div className="div_parceiros-home"></div>
-          <div className="div_parceiros-home"></div>
-          <div className="div_parceiros-home"></div>
-          <div className="div_parceiros-home"></div>
-          <div className="div_parceiros-home"></div>
-        </section>
+      <div className="buttons">
+        <button onClick={handleLeftClick5}>
+          <img src={chevron} alt="scroll-left" />
+        </button>
+        <button onClick={handleRightClick5}>
+          <img src={chevron} alt="scroll-right" />
+        </button>
       </div>
+      <div className="carousell" ref={carousel5}>
+        {data.map((el) => {
+          const { id, name, image, price, oldPrice } = el;
+          return (
+            <div className="item" key={id}>
+              <div className="image">
+                <img src={image} alt="img" />
+              </div>
+              <div className="info">
+                <span className="name">{name}</span>
+                <span className="oldPrice">R$ {oldPrice}</span>
+                <span className="price">R$ {price}</span>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+      <div className="buttons">
+        <button onClick={handleLeftClick5}>
+          <img src={chevron} alt="scroll-left" />
+        </button>
+        <button onClick={handleRightClick5}>
+          <img src={chevron} alt="scroll-right" />
+        </button>
+      </div>
+      <div className="carousell" ref={carousel5}>
+        {data.map((el) => {
+          const { id, name, image, price, oldPrice } = el;
+          return (
+            <div className="item" key={id}>
+              <div className="image">
+                <img src={image} alt="img" />
+              </div>
+              <div className="info">
+                <span className="name">{name}</span>
+                <span className="oldPrice">R$ {oldPrice}</span>
+                <span className="price">R$ {price}</span>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+      <div className="buttons">
+        <button onClick={handleLeftClick5}>
+          <img src={chevron} alt="scroll-left" />
+        </button>
+        <button onClick={handleRightClick5}>
+          <img src={chevron} alt="scroll-right" />
+        </button>
+      </div>
+      <div className="carousell" ref={carousel5}>
+        {data.map((el) => {
+          const { id, name, image, price, oldPrice } = el;
+          return (
+            <div className="item" key={id}>
+              <div className="image">
+                <img src={image} alt="img" />
+              </div>
+              <div className="info">
+                <span className="name">{name}</span>
+                <span className="oldPrice">R$ {oldPrice}</span>
+                <span className="price">R$ {price}</span>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+      <div className="buttons">
+        <button onClick={handleLeftClick5}>
+          <img src={chevron} alt="scroll-left" />
+        </button>
+        <button onClick={handleRightClick5}>
+          <img src={chevron} alt="scroll-right" />
+        </button>
+      </div>
+    </div>
+    <h1>Parceiros</h1>
+    <div className="parceiros">      
+      {parceiros.map((el) => {
+        return(
+        <div className="div1_parceiros-home" key={el.id}>
+          <img src={el.image} alt="parceiros" />
+        </div>)
+      })}
+    </div>
     </div>
   );
 }
