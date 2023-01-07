@@ -2,6 +2,7 @@ import "./Home.css";
 /* import { motion } from "framer-motion"; */
 import { useState, useEffect, useRef } from "react";
 import chevron from "../../Assets/images/chevron.png";
+import parcerias from "../../Assets/logo/parcerias.png";
 /* import img1 from "../../Assets/images/img1.jpg"
 import img2 from "../../Assets/images/img2.jpg"
 import img3 from "../../Assets/images/img3.jpg"
@@ -98,7 +99,7 @@ export function Home() {
 
     <div className="container">
       <div>
-        <h1>Moda</h1>
+        <img src={parcerias} alt="empresa" />
       </div>
       <div className="carousell" ref={carousel1}>
         {data.map((el) => {
@@ -126,7 +127,7 @@ export function Home() {
         </button>
       </div>
       <div>
-        <h1>Eletronicos</h1>
+      <img src={parcerias} alt="empresa" />
       </div>
       <div className="carousell" ref={carousel2}>
         {data.map((el) => {
@@ -154,7 +155,7 @@ export function Home() {
         </button>
       </div>
       <div>
-        <h1>Construção</h1>
+      <img src={parcerias} alt="empresa" />
       </div>
       <div className="carousell" ref={carousel3}>
         {data.map((el) => {
@@ -182,7 +183,7 @@ export function Home() {
         </button>
       </div>
       <div>
-        <h1>Esporte</h1>
+      <img src={parcerias} alt="empresa" />
       </div>
       <div className="carousell" ref={carousel4}>
         {data.map((el) => {
@@ -210,7 +211,7 @@ export function Home() {
         </button>
       </div>
       <div>
-        <h1>Diversos</h1>
+      <img src={parcerias} alt="empresa" />
       </div>
       <div className="carousell" ref={carousel5}>
         {data.map((el) => {
