@@ -1,17 +1,76 @@
+.slider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 0.35px;
+}
 
+.wrapper {
+  width: 100%;
+  position: relative;
+}
 
+.chevron_slide {
+  top: 50%;
+  height: 46px;
+  width: 46px;
+  text-align: center;
+  line-height: 46px;
+  background-color: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.2rem;
+  position: absolute;
+  transform: translateY(-50%);
+}
 
+.chevron_slide-left {
+  transform: rotate(180deg);
+}
 
+.chevron_slide:first-child {
+  left: -23px;
+}
 
+.chevron_slide:last-child {
+  right: -23px;
+}
 
+.wrapper .carousel {
+  font-size: 0;
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+}
 
-.container {  
- margin: 0 auto;
- max-width: 75vw;
- 
+.carousel img {
+  height: 340px;
+  object-fit: cover;
+  margin-left: 5px;
+  width: calc(100% / 3);
+}
 
-  
- /*  gap: 30px;
+.carousel img:first-child {
+  margin-left: 0px;
+}
+
+@media screen and (max-width: 900px) {
+  .carousel img {
+    width: calc(100% / 2);
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .carousel img {
+    width: 100%;
+  }
+}
+
+.container {
+  margin: 5rem auto;
+  max-width: 75vw;
+
+  /*  gap: 30px;
   max-width: 90%;
   margin: 2rem auto;
 */
@@ -66,17 +125,17 @@
 
 .container .carousell .item .info .oldPrice {
   font-size: 0.8rem;
-  text-decoration: line-through; 
+  text-decoration: line-through;
   flex-grow: 1;
   color: #e81a5d;
-} 
+}
 
 .container .carousell .item .info .price {
   margin-top: 10px;
   font-size: 1.2rem;
   font-weight: bold;
   background-color: #ff7e3b;
-} 
+}
 
 .container .buttons {
   width: 100%;
@@ -101,7 +160,6 @@
   max-width: 90%;
   margin: 2rem auto;
 }
-
 
 .section3-home {
   display: flex;
@@ -137,9 +195,12 @@
 
 .div1_home:hover {
   transition: all 1s;
-  box-shadow: 2px 2px 7px 7px dimgray; 
+  box-shadow: 2px 2px 7px 7px dimgray;
   cursor: pointer;
+}
 
+.div_destaques-log-parceiro {
+  margin-top: 3rem;
 }
 
 .div1_destaque-home {
@@ -150,9 +211,8 @@
 
 .div1_destaque-home:hover {
   transition: all 1s;
-  box-shadow: 2px 2px 7px 7px dimgray; 
+  box-shadow: 2px 2px 7px 7px dimgray;
   cursor: pointer;
-
 }
 
 .div2_destaque-home {
@@ -173,8 +233,13 @@
 
 .div_destaque-home:hover {
   transition: all 1s;
-  box-shadow: 2px 2px 7px 7px dimgray; 
+  box-shadow: 2px 2px 7px 7px dimgray;
   cursor: pointer;
+}
+
+.h1_parceiros-home {
+  margin: 3rem 0 3rem 0;
+  text-align: center;
 }
 
 .section_parceiros-home {
@@ -182,22 +247,21 @@
   flex-wrap: wrap;
   justify-content: center;
   margin: 0 auto;
-  gap: 30px; 
+  gap: 30px;
   padding-bottom: 3rem;
 }
 
 .div_parceiros-home {
-    height: 300px;
-    width: 200px;
-    background-color: #fff;
+  height: 300px;
+  width: 200px;
+  background-color: #fff;
 }
 
 .div_parceiros-home:hover {
   transition: all 1s;
-  box-shadow: 2px 2px 7px 7px dimgray; 
+  box-shadow: 2px 2px 7px 7px dimgray;
   cursor: pointer;
 }
-
 
 .parceiros {
   display: grid;
@@ -208,4 +272,20 @@
 .div1_parceiros-home {
   display: flex;
   justify-content: center;
+}
+
+.div_home-propagandas {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 0 auto;
+  width: 100%;
+  height: 10vh;
+  background-color: #fff; 
+}
+
+.div_home-propagandas img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
 }
