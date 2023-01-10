@@ -104,9 +104,11 @@
     color: goldenrod;
 }
 
-.categoria {
+.categoria0 {
     color: black;
     background-color: blueviolet;
+    margin-right: 1rem;
+    padding: 0 1rem;
 }
 
 
@@ -114,29 +116,36 @@
     position: sticky;
     display: flex;
     justify-content: end;
-   
-
-
-
 }
 
 .button_mobile-close { 
    cursor: pointer;
    background-color: blueviolet;
    width: 35px;
-   padding: 0;
-   
+   padding: 0;   
+}
+
+.div_categoria0 {
+    display: flexbox;
+    justify-content: space-around;
 }
 
 .div_home-mobile {
     display: flex;   
     justify-content: end;
     margin-right: 20%;
+    margin-top: 0;
+    position: relative;
 }
 
 .div_mobile {
+    text-align: center;
     background-color: blueviolet;
-    height: 200px;
-    width: 150px;
+    height: 220px;
+    width: 140px;
     position: absolute;    
+}
+
+.close_mobile-header {
+    margin-top: .5rem;
 }
