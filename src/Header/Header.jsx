@@ -2,41 +2,23 @@ import "./Header.css";
 import { BsSearch } from "react-icons/bs";
 import { MdAddShoppingCart } from "react-icons/md";
 import { IoIosCloseCircle } from "react-icons/io";
-import Modal from "react-modal";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import logo2 from "../Assets/logo/logo2.png";
 
-const customStyle = {
-  overlay: {
-    background: "rgb(0, 0, 0, 0)",
-  },
-};
 
-Modal.setAppElement("#root");
 
 export function Header() {
-  const [statusModal, setStatusModal] = useState(false);
-  const [header, setHeader] = useState(false);
   const navigate = useNavigate();
+  const [state, setState] = useState(false);
 
-  function Close() {
-    setStatusModal(!statusModal);
+  function handleClick() {
+    setState(!state)
   }
 
- /*  function None() {
-    setHeader(!header);
-  } */
-
   return (
-   /*  <div className="header">
-      {header ? "div_sell-header" : "div_header"} */
+
       <div className="div_header">
-     {/*    <div className="div_sell-header">
-          <div className="div_logo">
-            <img src={logo2} alt="logo" />
-          </div>
-        </div> */}
         <div className="div_logo-form">
           <div className="div_logo">
             <img src={logo2} alt="logo" />
@@ -59,20 +41,18 @@ export function Header() {
         </div>
         <div className="div_menu">
           <ul className="ul_header">
-            <li className="li_header">
-              <button
-                onClick={() => {
-                  Close();
-                }}
+            <li className="li_header categorias">
+              <button style={state?{backgroundColor: "blueviolet"}: {backgroundColor: "rgb(223, 223, 126)"}}
+                onClick={handleClick}                 
               >
-                Categorias
+                { state? <span className="categoria">Categorias<IoIosCloseCircle/></span> : <span>Categorias</span> }
               </button>
             </li>
             <li className="li_header">
               <button
                 onClick={() => {
                   navigate("/sell");
-                  /* None(); */
+
                 }}
               >
                 Vender
@@ -83,35 +63,28 @@ export function Header() {
             </li>
           </ul>
         </div>
-        <Modal
-          className="modal_header"
-          isOpen={statusModal}
-          onRequestClose={Close}
-          contentLabol="menu_modal"
-          style={customStyle}
-        >
-          <button
-            className="button_modal-header"
-            onClick={() => {
-              Close();
-            }}
-          >
-            <IoIosCloseCircle />
-          </button>
-          <ul className="ul_modal-header">
-            <li className="li_modal-header">Tecnologia</li>
-            <li className="li_modal-header">Casa e móveis</li>
-            <li className="li_modal-header">Eletrodomésticos</li>
-            <li className="li_modal-header">Esporte</li>
-            <li className="li_modal-header">Beleza</li>
-            <li className="li_modal-header">Ferramentas</li>
-            <li className="li_modal-header">Construção</li>
-            <li className="li_modal-header">Moda</li>
-            <li className="li_modal-header">Brinquedos</li>
-            <li className="li_modal-header">Diversos</li>
-          </ul>
-        </Modal>
+        { state ? (
+            <div className="div_home-mobile">
+            <div className="div_mobile">
+              <ul className="ul_mobile-header">
+              <li className="li_mobile-header">Tecnologia</li>
+              <li className="li_mobile-header">Casa e móveis</li>
+              <li className="li_mobile-header">Eletrodomésticos</li>
+              <li className="li_mobile-header">Esporte</li>
+              <li className="li_mobile-header">Beleza</li>
+              <li className="li_mobile-header">Ferramentas</li>
+              <li className="li_mobile-header">Construção</li>
+              <li className="li_mobile-header">Moda</li>
+              <li className="li_mobile-header">Brinquedos</li>
+              <li className="li_mobile-header">Diversos</li>
+            </ul>           
+          
+          </div>
+          </div>
+           ) : (
+           null
+           )}
+     
       </div>
-   /*  </div> */
   );
 }

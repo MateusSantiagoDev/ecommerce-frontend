@@ -7,7 +7,7 @@
 
 .wrapper {
   width: 100%;
-  position: relative;
+  /* position: relative; */
 }
 
 .chevron_slide {
@@ -46,25 +46,15 @@
 .carousel img {
   height: 340px;
   object-fit: cover;
-  margin-left: 5px;
-  width: calc(100% / 3);
+  width: calc(100%);
 }
 
 .carousel img:first-child {
   margin-left: 0px;
 }
 
-@media screen and (max-width: 900px) {
-  .carousel img {
-    width: calc(100% / 2);
-  }
-}
 
-@media screen and (max-width: 550px) {
-  .carousel img {
-    width: 100%;
-  }
-}
+
 
 .container {
   margin: 5rem auto;

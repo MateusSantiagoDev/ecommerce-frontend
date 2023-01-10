@@ -61,7 +61,6 @@
 
 .button_header-search {
     position: absolute;
-
     padding: .25rem;
     font-size: 3vh;
     margin-left: 0;
@@ -88,38 +87,56 @@
     color: #fff;
 }
 
-.modal_header {
-    margin-top: 21vh; 
-    background-color: dimgray;
-    margin-left: 68%;
-    margin-right: 21%;
-    position: relative;
-    border-radius: .5rem;
-}
 
-.ul_modal-header {
-    padding: .5rem;   
+.ul_mobile-header {
+ 
     list-style: none;     
 }
 
-.li_modal-header {
+.li_mobile-header {
     color: #fff;
     cursor: pointer;
     font-weight: 700;
     font-family: "eixo";
 }
 
-.li_modal-header:hover {
+.li_header:hover {
     color: goldenrod;
 }
 
-.button_modal-header {
-   margin-top: 3%;
-   margin-left: 80%;
-   position: absolute;
-   border: none;
-   border-radius: .5rem;
-   background-color: dimgray;
-   color: red;
+.categoria {
+    color: black;
+    background-color: blueviolet;
+}
+
+
+.div_button_mobile-close {
+    position: sticky;
+    display: flex;
+    justify-content: end;
+   
+
+
+
+}
+
+.button_mobile-close { 
    cursor: pointer;
+   background-color: blueviolet;
+   width: 35px;
+   padding: 0;
+   
+}
+
+.div_home-mobile {
+    display: flex;   
+    justify-content: end;
+    margin-right: 20%;
+}
+
+.div_mobile {
+    background-color: blueviolet;
+    height: 200px;
+    width: 150px;
+    position: absolute;    
 }
