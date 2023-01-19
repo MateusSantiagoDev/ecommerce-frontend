@@ -3,14 +3,21 @@ import "./Home.css";
 import { useState, useEffect, useRef } from "react";
 import chevron from "../../Assets/images/chevron.png";
 import parcerias from "../../Assets/logo/parcerias.png";
-import img1 from "../../Assets/images/img1.jpg";
-import img2 from "../../Assets/images/img2.jpg";
-import img3 from "../../Assets/images/img3.jpg";
-import img4 from "../../Assets/images/img4.jpg";
+import banner1 from "../../Assets/images/banner1.jpg";
+import banner2 from "../../Assets/images/banner2.jpg";
+import banner4 from "../../Assets/images/banner4.jpg";
+import banner5 from "../../Assets/images/banner5.jpg"; 
 import logo_pix from "../../Assets/images/logo_pix.png";
 import logo_boleto from "../../Assets/images/logo_boleto.png";
 import logo_master from "../../Assets/images/logo_master.png";
 import logo_visa from "../../Assets/images/logo_visa.png";
+
+/* import banner2 from "../../../public/assets/images/banner2.jpg";
+import banner4 from "../../../public/assets/images/banner4.jpg";
+import banner5 from "../../../public/assets/images/banner5.jpg";
+import banner6 from "../../../public/assets/images/banner6.png";
+import banner11 from "../../../public/assets/images/banner11.jpg"; */
+
  
 export function Home() {
   const carousel = useRef(null);
@@ -21,6 +28,7 @@ export function Home() {
   const carousel5 = useRef(null);
   const [data, setData] = useState([]);
   const [parceiros, setParceiros] = useState([]);
+  const [banner, setBanner] = useState([]);
 
   useEffect(() => {
     fetch("http://localhost:3000/static/shoes.json")
@@ -30,6 +38,10 @@ export function Home() {
     fetch("http://localhost:3000/static/parceiros.json")
       .then((response) => response.json())
       .then(setParceiros);
+
+      fetch("http://localhost:3000/static/banner.json")
+      .then((response) => response.json())
+      .then(setBanner);
   }, []);
 
   if (!data || !data.length) {
@@ -43,6 +55,10 @@ export function Home() {
   }, []); */
 
   if (!parceiros || !parceiros.length) {
+    return null;
+  }
+
+  if (!banner || !banner.length) {
     return null;
   }
 
@@ -117,14 +133,10 @@ export function Home() {
             alt="slide-left"
           />
           <div className="carousel" ref={carousel}>
-            <img src={img1} alt="img" />
-            <img src={img2} alt="img" />
-            <img src={img3} alt="img" />
-            <img src={img4} alt="img" />
-            <img src={img1} alt="img" />
-            <img src={img2} alt="img" />
-            <img src={img3} alt="img" />
-            <img src={img4} alt="img" />
+            <img src={banner1} alt="img" />
+            <img src={banner2} alt="img" />
+            <img src={banner4} alt="img" />
+            <img src={banner5} alt="img" />
           </div>
           <img
             onClick={handlescrollright}
@@ -173,6 +185,10 @@ export function Home() {
             <img src={chevron} alt="scroll-right" />
           </button>
         </div>
+<div>
+  <img src={banner1} alt="banner" />
+</div>
+
         <div>
           <img src={parcerias} alt="empresa" />
         </div>
